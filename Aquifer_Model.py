@@ -51,6 +51,7 @@ def aquifer_model(a,W,K,x_length,x_i,q0,z0):
     h_inland = round(h_inland,3)
     print("h_inland value at x=2000: " + str(h_inland) + "m")
 
+#Solves for q0 that preserves h_inland with SLR
 def new_q_formula(a,W,K,x_i,h_i,z0):
 
     def q_equation(q0):
@@ -111,7 +112,7 @@ for i in sample_scaled:
     #Partial Function of q0 with Respect to SLR
     new_q = partial(new_q_formula,40,0.0002,10,2000,h_i)
 
-    #Eval of Eval of Both Systems at 0.25m SLR
+    #Eval of Both Systems at 0.25m SLR
     print(" ")
     print("SLR: 0.25m")
     print("FLUX-CONTROLLED SYSTEM:")
@@ -120,7 +121,7 @@ for i in sample_scaled:
     print("HEAD-CONTROLLED SYSTEM:")
     print(head_controlled(q0,z0 + 0.25))
 
-    #Eval of Eval of Both Systems at 0.5m SLR
+    #Eval of Both Systems at 0.5m SLR
     print(" ")
     print("SLR: 0.5m")
     print("FLUX-CONTROLLED SYSTEM:")
@@ -129,7 +130,7 @@ for i in sample_scaled:
     print("HEAD-CONTROLLED SYSTEM:")
     print(head_controlled(q0,z0 + 0.5))
 
-    #Eval of Eval of Both Systems at 0.75m SLR
+    #Eval of Both Systems at 0.75m SLR
     print(" ")
     print("SLR: 0.75m")
     print("FLUX-CONTROLLED SYSTEM:")
@@ -138,7 +139,7 @@ for i in sample_scaled:
     print("HEAD-CONTROLLED SYSTEM:")
     print(head_controlled(q0,z0 + 0.75))
 
-    #Eval of Eval of Both Systems at 1m SLR
+    #Eval of Both Systems at 1m SLR
     print(" ")
     print("SLR: 1m")
     print("FLUX-CONTROLLED SYSTEM:")
@@ -147,7 +148,7 @@ for i in sample_scaled:
     print("HEAD-CONTROLLED SYSTEM:")
     print(head_controlled(q0,z0 + 1))
 
-    #Eval of Eval of Both Systems at 1.25m SLR
+    #Eval of Both Systems at 1.25m SLR
     print(" ")
     print("SLR: 1.25m")
     print("FLUX-CONTROLLED SYSTEM:")
@@ -156,7 +157,7 @@ for i in sample_scaled:
     print("HEAD-CONTROLLED SYSTEM:")
     print(head_controlled(q0,z0 + 1.25))
 
-    #Eval of Eval of Both Systems at 1.5m SLR
+    #Eval of Both Systems at 1.5m SLR
     print(" ")
     print("SLR: 1.5m")
     print("FLUX-CONTROLLED SYSTEM:")
